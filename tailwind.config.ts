@@ -8,10 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      keyframes: {
+        scrollShow: {
+          "0%": { opacity: "0", transform: "translateY(8%)" },
+          "100%": { opacity: "1", transform: "translateY(0%)" },
+        },
+        scrollHide: {
+          "0%": { opacity: "1", transform: "translateY(0%)" },
+          "100%": { opacity: "0", transform: "translateY(8%)" },
+        },
+      },
+      animation: {
+        scrollShow: "scrollShow 0.75s ease-out forwards",
+        scrollHide: "scrollHide 0.75s ease-out forwards",
       },
     },
   },
